@@ -1,9 +1,10 @@
 'use strict';
 
-/* 
- * Magic Mirror Module: MMM-dht2
+/* Magic Mirror
+ * Module: MMM-dht22
  *
  * By Juergen Wolf-Hofer
+ * MIT Licensed.
  */
 
 const NodeHelper = require('node_helper');
@@ -26,34 +27,24 @@ module.exports = NodeHelper.create({
         self.getStats();
       }, this.config.updateInterval);
     }
-
   },
 
   getStats: function() {
     var self = this;
 
     async.parallel([
-      // get cpu temp
-      async.apply(exec, '/opt/vc/bin/vcgencmd measure_temp'),
-      async.apply(exec, 'cat /proc/loadavg'),
-      // get free ram in %
-      async.apply(exec, "free | awk '/^Mem:/ {print $4*100/$2}'"),
-      // get used ram in %
-      // async.apply(exec, 'free | awk '/^Mem:/ {print $3*100/$2}''),
-
+      async.apply(exec, 'sudo /home/pi/bin/dht22 c 22'),
+      async.apply(exec, 'sudo /home/pi/bin/dht22 f 22'),
+      async.apply(exec, 'sudo /home/pi/bin/dht22 h 22'),
     ],
     function (err, res) {
       var stats = {};
-      stats.cpuTemp = self.formatCpuTemp(res[0][0]);
-      stats.sysLoad = res[1][0].split(' ');
-      stats.freeMem = res[2][0];
-      // console.log(stats);
+	  stats.celsius = res[0][0];
+	  stats.fahrenheit = res[1][0];
+	  stats.humidity = res[2][0];
+      //console.log(stats);
       self.sendSocketNotification('STATS', stats);
     });
-  },
-
-  formatCpuTemp: function(temp) {
-    return temp.replace('temp=','').replace('\'','\°');
   },
 
 });

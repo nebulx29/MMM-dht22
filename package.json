@@ -1,0 +1,22 @@
+{
+  "name": "MMM-dht22",
+  "version": "0.1",
+  "description": "Displays readings from local DHT22 sensor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebulx29/MMM-dht22"
+  },
+  "keywords": [
+    "MagicMirror",
+    "DHT22",
+    "temperature",
+    "humidity"
+  ],
+  "author": "nebulx29",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nebulx29/MMM-dht22/issues"
+  },
+  "homepage": "https://github.com/nebulx29/MMM-dht22"
+
+}

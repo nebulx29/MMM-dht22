@@ -1,0 +1,15 @@
+.MMM-dht22 .line {
+    line-height: 1.2em;
+}
+
+.MMM-dht22 .modal {
+    position: fixed;
+    text-align: left;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.MMM-dht22 .modal ul {
+    margin: 0px;
+}

@@ -3,14 +3,14 @@ Magic Mirror Module that displays temperature/humidity readings from local DHT22
 
 ### Prerequisites
 
-- requires MagicMirror v2.0.0
-- a DHT22 temperature/humidity sensor connected to VCC/GND and a GPIO of your Raspberry Pi
+- tested only on MagicMirror v2.0.0
+- a DHT22 temperature/humidity sensor connected to a GPIO of your Raspberry Pi
 - working installation of DHT22 utility - see https://github.com/nebulx29/dht22
 
 
 ### Download and Installation 
 
-To use this module, just clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/nebulx29/MMM-dht22`
+To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/nebulx29/MMM-dht22`
 
 
 ### Configuration

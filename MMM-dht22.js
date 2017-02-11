@@ -10,7 +10,10 @@ Module.register('MMM-dht22', {
   defaults: {
     updateInterval: 10000,
     animationSpeed: 0,
-	header: 'DHT22 Sensor'
+	header: 'DHT22 Sensor',
+	tempUnit: 'celsius',          // 'celsius' or 'fahrenheit'
+	dht22gpio: 22,
+	dht22util: 'sudo /home/pi/bin/dht22'
   },
 
     getStyles: function () {
@@ -43,18 +46,16 @@ Module.register('MMM-dht22', {
     var wrapper = document.createElement('table');
 
     wrapper.innerHTML = '<tr>' +
-						'<td class="header">' + this.config.header + '</td><td>&nbsp;</td>' +
-						'</tr></tr>' +  
-                        '<td class="title">Celsius: </td>' +
-                        '<td class="value">' + this.stats.celsius + '</td>' +
-						'</tr></tr>' +  
-                        '<td class="title">Fahrenheit: </td>' +
-                        '<td class="value">' + this.stats.fahrenheit + '</td>' +
-						'</tr></tr>' +  
-                        '<td class="title">Humidity: </td>' +
-                        '<td class="value">' + this.stats.humidity + '</td>' +
+							'<td class="header" span="2">' + this.config.header + '</td>' +
+						'</tr><tr>' +  
+							'<td class="title">Temperature: </td>' +
+							'<td class="value">' +
+								((this.config.tempUnit == 'fahrenheit') ? this.stats.fahrenheit : this.stats.celsius) + 					
+							'</td>' + 
+						'</tr><tr>' +  
+							'<td class="title">Humidity: </td>' +
+							'<td class="value">' + this.stats.humidity + '</td>' +
                         '</tr>';
-
     return wrapper;
   },
 });

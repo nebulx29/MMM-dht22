@@ -31,11 +31,15 @@ module.exports = NodeHelper.create({
 
   getStats: function() {
     var self = this;
+	var path = this.config.dht22Util + " ";
 
     async.parallel([
-      async.apply(exec, 'sudo /home/pi/bin/dht22 c 22'),
-      async.apply(exec, 'sudo /home/pi/bin/dht22 f 22'),
-      async.apply(exec, 'sudo /home/pi/bin/dht22 h 22'),
+      //async.apply(exec, 'sudo /home/pi/bin/dht22 c 22'),
+      //async.apply(exec, 'sudo /home/pi/bin/dht22 f 22'),
+      //async.apply(exec, 'sudo /home/pi/bin/dht22 h 22'),
+      async.apply(exec, this.config.dht22util + ' c ' + this.config.dht22gpio),
+      async.apply(exec, this.config.dht22util + ' f ' + this.config.dht22gpio),
+      async.apply(exec, this.config.dht22util + ' h ' + this.config.dht22gpio)
     ],
     function (err, res) {
       var stats = {};

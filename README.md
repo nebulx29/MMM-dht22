@@ -39,6 +39,6 @@ The following properties can be configured:
 |header|The name that should be displayed at the top of the module<br>**Example:** `header: 'DHT22 sensor'`|String|'DHT22 Sensor'|
 |tempUnit|This can be either 'celsius' or 'fahrenheit'.<br>|'celsius' or 'fahrenheit'|'celsius'|
 |dht22gpio|The GPIO pin (wiringPi numbering) that the DHT22 sensor is connected to.<br>**Example:** `dht22gpio: 22`|int|22|
-|dht22util|Valid path to where the DHT22 is installed<br><br>This value is **required**.<br>**Example:** `dht22util: 'sudo /home/pi/bin/dht22'`|String|'sudo /home/pi/bin/dht22'|
+|dht22util|Valid path to where the DHT22 is installed<br>**Example:** `dht22util: 'sudo /home/pi/bin/dht22'`|String|`'sudo /home/pi/bin/dht22'`|
 |updateInterval|The update interval. Determines the refresh rate at which sensor is read.<br>**Example:** `updateInterval: 10000`|int|10000|
 |animationSpeed|Speed of animation when updates occur.<br>**Example:** `animationSpeed: 0`|int|0|

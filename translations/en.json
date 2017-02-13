@@ -1,7 +1,3 @@
 {
-  "LOADING": "Loading...",
-  "NETWORK_INTERFACES": "Network Interfaces",
-  "COMMAND_LIST": "List of all Voice Commands",
-  "MODE": "Mode",
-  "VOICE_COMMANDS": "Voice Commands"
+  "TEST_A": "Test en"
 }

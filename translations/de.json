@@ -1,7 +1,3 @@
 {
-  "LOADING": "Lade...",
-  "NETWORK_INTERFACES": "Netzwerk Interfaces",
-  "COMMAND_LIST": "Liste aller Sprachbefehle",
-  "MODE": "Modus",
-  "VOICE_COMMANDS": "Sprachbefehle"
+  "TEST_A": "Test a"
 }

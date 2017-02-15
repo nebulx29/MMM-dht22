@@ -43,19 +43,28 @@ Module.register('MMM-dht22', {
 
   // Override dom generator.
   getDom: function() {
-    var wrapper = document.createElement('table');
+	var wrapper = document.createElement('div');
+	var header = document.createElement("header");
+    //header.classList.add("align-left");
+	var name = document.createElement("span");
+    name.innerHTML = "" + this.config.header;
+    header.appendChild(name);
+	wrapper.appendChild(header);
+	
+    var table = document.createElement('table');
+    table.classList.add("small", "table");
 
-    wrapper.innerHTML = '<tr>' +
-							'<td class="header" span="2">' + this.config.header + '</td>' +
-						'</tr><tr>' +  
-							'<td class="title">Temperature: </td>' +
-							'<td class="value">' +
+    table.innerHTML = '<tr>' +
+							'<td class="normal">Temperature: </td>' +
+							'<td class="bright">' +
 								((this.config.tempUnit == 'fahrenheit') ? this.stats.fahrenheit : this.stats.celsius) + 					
 							'</td>' + 
 						'</tr><tr>' +  
-							'<td class="title">Humidity: </td>' +
-							'<td class="value">' + this.stats.humidity + '</td>' +
+							'<td class="normal">Humidity: </td>' +
+							'<td class="bright">' + this.stats.humidity + '</td>' +
                         '</tr>';
-    return wrapper;
+    
+	wrapper.appendChild(table);
+	return wrapper;
   },
 });

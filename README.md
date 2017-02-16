@@ -21,13 +21,14 @@ The module needs the default configuration block in your config.js to work.
 {
 	module: 'MMM-dht22',
 	position: 'bottom_left',                    // the location where the module should be displayed
+	classes: 'small dimmed',
 	config: {
-		header: 'DHT22 Sensor'                  // name to be displayed in the module
+		header: 'DHT22 Sensor',                 // name to be displayed in the module
 		tempUnit: 'celsius',                    // alternatively use  'fahrenheit'
 		dht22gpio: 22,                          // gpio pin that the sensor is connected to
-		dht22util: 'sudo /home/pi/bin/dht22'    // path to the dht22 utility
+		dht22util: 'sudo /home/pi/bin/dht22',   // path to the dht22 utility
 		updateInterval: 10000,                  // interval in ms to read the sesor
-		animationSpeed: 0,                      // animation speed
+		animationSpeed: 0                      // animation speed
 	}
 }
 ```
